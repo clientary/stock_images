@@ -24,14 +24,27 @@ https://pixabay.com/service/license-summary/
 
 ## How to add more
 
-1. download the highest quality image
-2. use Photoshop to crop image to 1502x939
-3. export as 100% quality JPG
-4. use any online image optimizer to reduce the file size (I use https://tinyjpg.com/ )
-5. then resize image again to 120x75
-6. use https://instantsprite.com/ to create the sprite CSS and sprite PNG
-7. use https://tinypng.com/ to reduce the sprite PNG file size (I went from 1.5 MB to 354 KB)
-8. copypasta the sprite CSS to `StockImagePicker.jsx`
+1. download the highest quality image from pexels/unsplash/pixabay
+2. update this README
+   - put the url of the source image at the appropriate category at the bottom of this README file
+3. generate the "hero" image
+   1. use Photoshop to crop image to 1502x939 and export as 100% quality JPG
+   2. use any online image optimizer to reduce the file size (I use https://tinyjpg.com/ )
+4. generate the "sprite" image
+   1. resize the 1502x939 image to 120x75 and export it
+5. generate the sprite CSS and sprite PNG
+   1. use https://instantsprite.com/
+      - this is the fastest site, since it does everything client-side (so no need to upload files to a server)
+      - it also generates CSS that you can copypaste with minimal modification
+   2. use https://tinypng.com/ to reduce the sprite PNG file size (I went from 1.5 MB to 354 KB)
+   3. copypasta the sprite CSS to `StockImagePicker.jsx`
+6. update our redirect
+   1. upload the "hero" image, the "sprite" image, and the sprite PNG to this repo
+   2. go to `https://github.com/clientary/stock_images/tree/[commit hash]/cover_pages`
+   3. find the newly uploaded "hero" image, right click, and copy the url
+      - the url should look like `https://github.com/clientary/stock_images/blob/[commit hash]/cover_pages/[filename].jpg`
+   4. go to https://statically.io/convert/ and paste the url to generate the CDN url
+   5. copypasta the CDN url into `app_controller.rb`
 
 Aside: why do we use 1502x939?
 - 16:10 is a good ratio
