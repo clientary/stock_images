@@ -45,6 +45,9 @@ https://pixabay.com/service/license-summary/
       - the url should look like `https://github.com/clientary/stock_images/blob/[commit hash]/cover_pages/[filename].jpg`
    4. go to https://statically.io/convert/ and paste the url to generate the CDN url
    5. copypasta the CDN url into `app_controller.rb`
+7. prime the cache + humantest
+   1. open a browser tab and copypasta the CDN url of the "hero" image into the address bar - verify it loads
+   2. copypasta the CDN url of the sprite PNG into the address bar - verify it loads
 
 Aside: why do we use 1502x939?
 - 16:10 is a good ratio
